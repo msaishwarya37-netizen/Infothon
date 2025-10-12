@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="popup-container">
+        <div class="header">
+            <img src="icons/icon32.png" alt="PhishShield" class="logo">
+            <h3>PhishShield Detector</h3>
+        </div>
+        
+        <div class="current-url">
+            <strong>Current URL:</strong>
+            <div id="current-url" class="url-display">Loading...</div>
+        </div>
+
+        <div class="analysis-section">
+            <button id="analyze-btn" class="analyze-button">
+                🛡️ Scan This Page
+            </button>
+            
+            <div id="results" class="results hidden">
+                <div class="status" id="status">-</div>
+                <div class="confidence">
+                    <strong>Confidence:</strong>
+                    <span id="confidence-value">-</span>
+                </div>
+                <div class="details" id="details">-</div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <img src="assets/loading.gif" alt="Loading">
+                Analyzing...
+            </div>
+        </div>
+
+        <div class="footer">
+            <button id="options-btn" class="options-button">Settings</button>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
