@@ -110,5 +110,43 @@ public class AppTest {
     }
 }
 
+#jenkin
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven3'
+        jdk 'JDK17'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/Naveen04jan/demo-app.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+    }
+}
+
+
 
 mvn archetype:generate -DgroupId=com.example.app \-DartifactId=demo-app \-DarchetypeArtifactId=maven-archetype-quickstart \-DinteractiveMode=false
